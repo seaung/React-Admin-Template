@@ -1,0 +1,29 @@
+body {
+	background-color: #333333;
+}
+
+.title-h4 {
+	text-align: center;
+}
+
+.search-box {
+	position: absolute;
+	top: 60px;
+	left: 400px;
+}
+
+.search-input {
+	float: left;
+	width: 350px;
+	height: 30px;
+	outline: none;
+}
+
+.search-btn {
+	float: left;
+	width: 120px;
+	height: 35px;
+	border: none;
+	background-color: blue;
+	color: #FFFFFF;
+}

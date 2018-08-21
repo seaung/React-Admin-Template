@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import './Todo.css';
 
 
 class Todo extends Component {
@@ -13,11 +14,12 @@ class Todo extends Component {
 	render() {
 		return (
       <Fragment>
-       <div>
-         <input value="" />
-         <button onClick={this.handlerSubmit.bind(this)}>Submit</button>
+       <h4 className="title-h4">To do Task.</h4>
+       <div className="search-box">
+         <input className="search-input" value="" />
+         <button className="search-btn" onClick={this.handlerSubmit.bind(this)}>Submit</button>
        </div>
-       <ul>
+       <ul className="dot-list">
          {
          	  this.state.lists.map((item, index) => {
          	  	return (
