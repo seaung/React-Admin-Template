@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import TodoItem from 'TodoItems';
 import './Todo.css';
 
 
@@ -9,6 +10,9 @@ class Todo extends Component {
 			lists: [],
 			theValue: ''
 		}
+
+		this.handlerSubmit.bind(this);
+		this.handlerDelete.bind(this);
 	}
 
 	render() {
@@ -17,33 +21,42 @@ class Todo extends Component {
        <h4 className="title-h4">To do Task.</h4>
        <div className="search-box">
          <input className="search-input" value="" />
-         <button className="search-btn" onClick={this.handlerSubmit.bind(this)}>Submit</button>
+         <button className="search-btn" onClick={this.handlerSubmit}>Submit</button>
        </div>
        <ul className="dot-list">
          {
-         	  this.state.lists.map((item, index) => {
-         	  	return (
-         	  		<li key={index} onClick={this.handlerDelete.bind(this, index)}>{item}</li>
-         	  	)
-         	  })
+         	  getItems();
          }
        </ul>
       </Fragment>
 		)
 	}
 
-	handlerSubmit() {
-		this.setState({
-			lists: [...this.state.lists, this.theValue],
-			theValue: ''
+	getItems() {
+		return this.state.lists.map((item, index) => {
+			return (
+			  <div key={index}>
+			    <TodoItems content={item}
+			               index={index}
+			               deleteItem={this.handlerDelete}
+			               />
+			  </div>
+			)
 		})
 	}
 
+	handlerSubmit() {
+		this.setState((prevState) => ({
+			lists: [...prevState.lists, prevState.theValue],
+			theValue: ''
+		}))
+	}
+
 	handlerDelete(index) {
-		const lists = [...this.state.lists];
-		lists.splice(index, 1);
-		this.setState({
-		  lists: lists
+		this.setState((prevState) => {
+			const lists = [...prevState.lists];
+			lists.splice(index, 1);
+			return { lists: lists }
 		})
 	}
 
