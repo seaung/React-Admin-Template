@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import TodoItem from 'TodoItems';
-import './Todo.css';
+import TodoItems from './TodoItems';
 
 
 class Todo extends Component {
@@ -25,7 +24,7 @@ class Todo extends Component {
        </div>
        <ul className="dot-list">
          {
-         	  getItems();
+         	  this.getItems()
          }
        </ul>
       </Fragment>
