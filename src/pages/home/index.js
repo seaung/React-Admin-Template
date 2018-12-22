@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
+import './index.less';
+
 
 export default class Home extends Component {
   render() {
     return (
-      <div className='container'>
-        <div className='col-md-4 col-offset-4'></div>
+      <div className='home-wrap'>
+        welcome to react admin system.
       </div>
     )
   }
