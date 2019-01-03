@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Menu, Icon } from 'antd';
+import { NavLink } from 'react-router-dom';
 
 import './index.less';
 
@@ -19,7 +20,7 @@ class Siderbar extends Component {
             key='sub1'
             title={<span><Icon type="mail" /><span>Navigation One</span></span>}
             >
-            <Menu.Item key="1">Option 1</Menu.Item>
+            <Menu.Item key="1"><NavLink to="/admin/home">OPtion 1</NavLink></Menu.Item>
             <Menu.Item key="2">Option 2</Menu.Item>
           </SubMenu>
           <SubMenu

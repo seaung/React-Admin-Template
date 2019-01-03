@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App'
+import IRouter from './router';
+// import Admin from './admin';
+// import App from './App'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<IRouter />, document.getElementById('root'));
