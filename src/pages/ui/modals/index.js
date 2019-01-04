@@ -22,6 +22,19 @@ class Modals extends Component {
     })
   }
 
+  handleConfirm = (type) => {
+    Modal[type]({
+      title: "ok?",
+      content: "are you ok?",
+      onOk() {
+        console.log("ok")
+      },
+      onCancel() {
+        console.log("cancle")
+      }
+    })
+  }
+
   render() {
     return (
       <div>
@@ -29,6 +42,13 @@ class Modals extends Component {
           <Button type="primary" onClick={() => this.handleOPen("showModal1")}>open modal</Button>
           <Button type="primary" onClick={() => this.handleOPen("showModal2")}>open modal</Button>
           <Button type="primary" onClick={() => this.handleOPen("showModal3")}>open modal</Button>
+        </Card>
+        <Card title="Information Confirm" className="card-wrap">
+          <Button type="primary" onClick={() => this.handleConfirm("confirm")}>Confirm</Button>
+          <Button type="primary" onClick={() => this.handleConfirm("info")}>Info</Button>
+          <Button type="primary" onClick={() => this.handleConfirm("success")}>Success</Button>
+          <Button type="primary" onClick={() => this.handleConfirm("warning")}>Wraning</Button>
+          <Button type="primary" onClick={() => this.handleConfirm("error")}>Errors</Button>
         </Card>
         <Modal
           title="React Modal"
